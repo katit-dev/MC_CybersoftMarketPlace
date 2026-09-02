@@ -1,0 +1,6 @@
+@MC_OrderService_HostAddress = http://localhost:5169
+
+GET {{MC_OrderService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

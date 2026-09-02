@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="MC_Getway/MC_Getway.csproj" />
+  <Project Path="MC_OrderService/MC_OrderService.csproj" />
+  <Project Path="MC_PaymentService/MC_PaymentService.csproj" />
+  <Project Path="MC_ProductService/MC_ProductService.csproj" />
+  <Project Path="MC_UserService/MC_UserService.csproj" />
+</Solution>
