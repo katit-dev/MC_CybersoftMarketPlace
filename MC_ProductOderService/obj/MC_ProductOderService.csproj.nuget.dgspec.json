@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_OrderService\\MC_OrderService.csproj": {}
+    "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_ProductOderService\\MC_ProductOderService.csproj": {}
   },
   "projects": {
-    "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_OrderService\\MC_OrderService.csproj": {
+    "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_ProductOderService\\MC_ProductOderService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_OrderService\\MC_OrderService.csproj",
-        "projectName": "MC_OrderService",
-        "projectPath": "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_OrderService\\MC_OrderService.csproj",
+        "projectUniqueName": "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_ProductOderService\\MC_ProductOderService.csproj",
+        "projectName": "MC_ProductOderService",
+        "projectPath": "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_ProductOderService\\MC_ProductOderService.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_OrderService\\obj\\",
+        "outputPath": "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_ProductOderService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

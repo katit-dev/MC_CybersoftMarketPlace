@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qPfCeG5mAGw=",
+  "dgSpecHash": "5viWIgP75vk=",
   "success": true,
-  "projectFilePath": "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_ProductService\\MC_ProductService.csproj",
+  "projectFilePath": "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_ProductOderService\\MC_ProductOderService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\automapper\\16.1.1\\automapper.16.1.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
@@ -81,9 +81,9 @@
       "code": "NU1510",
       "level": "Warning",
       "message": "PackageReference Microsoft.AspNetCore.Components.Authorization will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.",
-      "projectPath": "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_ProductService\\MC_ProductService.csproj",
+      "projectPath": "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_ProductOderService\\MC_ProductOderService.csproj",
       "warningLevel": 1,
-      "filePath": "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_ProductService\\MC_ProductService.csproj",
+      "filePath": "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_ProductOderService\\MC_ProductOderService.csproj",
       "libraryId": "Microsoft.AspNetCore.Components.Authorization",
       "targetGraphs": [
         "net10.0"
@@ -93,9 +93,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'Microsoft.OpenApi' 2.4.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc",
-      "projectPath": "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_ProductService\\MC_ProductService.csproj",
+      "projectPath": "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_ProductOderService\\MC_ProductOderService.csproj",
       "warningLevel": 1,
-      "filePath": "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_ProductService\\MC_ProductService.csproj",
+      "filePath": "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_ProductOderService\\MC_ProductOderService.csproj",
       "libraryId": "Microsoft.OpenApi",
       "targetGraphs": [
         "net10.0"

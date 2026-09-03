@@ -1,0 +1,6 @@
+@MC_ProductOderService_HostAddress = http://localhost:5217
+
+GET {{MC_ProductOderService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

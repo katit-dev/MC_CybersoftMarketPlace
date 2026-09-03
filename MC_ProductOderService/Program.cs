@@ -1,28 +1,29 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-// using MC_UserService.Data;
+// using MC_ProductOderService.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
-//DI entity framework
-// builder.Services.AddDbContext<UserDbContext>(options =>
+    
+// builder.Services.AddDbContext<ProductOrderDbContext>(options => 
 //     options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnectionstring"))
 // );
 
-
-//Cấu hình httpclient domain đến gateway https://localhost:7265/
-string gatewayBaseUrl = builder.Configuration["Gateway:BaseUrl"];
-builder.Services.AddHttpClient("Gateway", client =>
+//Cấu hình gateway base url để service gọi API qua gateway
+string gatewayBaseUrl = builder.Configuration["Gateway:BaseUrl"]
+    ?? throw new InvalidOperationException("Missing configuration: Gateway:BaseUrl");
+builder.Services.AddHttpClient("gateway-user", client =>
 {
-    client.BaseAddress = new Uri(gatewayBaseUrl);
-
+    // Dấu '/' cuối giúp URI tương đối giữ nguyên prefix /mc-user.
+    client.BaseAddress = new Uri($"{gatewayBaseUrl.TrimEnd('/')}/mc-user/");
+    client.Timeout = TimeSpan.FromSeconds(10);
 });
+
 
 
 
@@ -58,12 +59,12 @@ builder.Services.AddSwaggerGen(options =>
 
     options.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "User Service API",
+        Title = "Product & Order Service API",
         Version = "v1",
         Description = "API documentation for .NET 10"
     });
     // Swagger UI chạy tại Gateway phải gọi API qua route prefix của YARP.
-    options.AddServer(new OpenApiServer { Url = "/mc-user" });
+    options.AddServer(new OpenApiServer { Url = "/mc-product-order" });
     // Khai báo scheme Bearer -> tạo nút "Authorize" + ô nhập token trong Swagger
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
@@ -164,13 +165,7 @@ app.MapControllers();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseStaticFiles();
-
-// Development dùng HTTP nội bộ từ Gateway (localhost:5014 -> localhost:5192).
-// Redirect tại đây sẽ làm request rời khỏi Gateway và chuyển sang cổng HTTPS 7245.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseHttpsRedirection();
-}
+app.UseHttpsRedirection();
 
 
 app.Run();

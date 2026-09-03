@@ -1,6 +1,0 @@
-@MC_ProductService_HostAddress = http://localhost:5008
-
-GET {{MC_ProductService_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

@@ -4263,11 +4263,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_ProductService\\MC_ProductService.csproj",
-      "projectName": "MC_ProductService",
-      "projectPath": "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_ProductService\\MC_ProductService.csproj",
+      "projectUniqueName": "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_ProductOderService\\MC_ProductOderService.csproj",
+      "projectName": "MC_ProductOderService",
+      "projectPath": "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_ProductOderService\\MC_ProductOderService.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_ProductService\\obj\\",
+      "outputPath": "D:\\_KhanhVy\\MC_CybersoftMarketPlace\\MC_ProductOderService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
