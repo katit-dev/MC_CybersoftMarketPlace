@@ -2,4 +2,5 @@
   <Project Path="MC_PaymentService/MC_PaymentService.csproj" />
   <Project Path="MC_UserService/MC_UserService.csproj" />
   <Project Path="MC_ProductOderService/MC_ProductOderService.csproj" />
+  <Project Path="MC_GateWay/MC_GateWay.csproj" />
 </Solution>

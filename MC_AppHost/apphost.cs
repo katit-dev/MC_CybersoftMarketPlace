@@ -31,11 +31,11 @@ builder.AddProject("paymentservice", "../MC_PaymentService/MC_PaymentService.csp
     });
 
 
-// builder.AddProject("gateway", "../MC_GateWay/MC_GateWay.csproj")
-//     .WithUrlForEndpoint("http", url =>
-//     {
-//         url.DisplayText = "Swagger UI";
-//         url.Url = "/";
-//     });
+builder.AddProject("gateway", "../MC_GateWay/MC_GateWay.csproj")
+    .WithUrlForEndpoint("http", url =>
+    {
+        url.DisplayText = "Swagger UI";
+        url.Url = "/";
+    });
     
 builder.Build().Run();

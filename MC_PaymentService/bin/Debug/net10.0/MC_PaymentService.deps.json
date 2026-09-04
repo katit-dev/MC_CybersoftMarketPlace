@@ -11,7 +11,7 @@
           "AutoMapper": "16.1.1",
           "BCrypt.Net-Next": "4.2.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.11",
-          "Microsoft.AspNetCore.OpenApi": "10.0.1",
+          "Microsoft.AspNetCore.OpenApi": "10.0.2",
           "Microsoft.EntityFrameworkCore.Design": "10.0.8",
           "Microsoft.EntityFrameworkCore.Proxies": "10.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.8",
@@ -96,14 +96,14 @@
           }
         }
       },
-      "Microsoft.AspNetCore.OpenApi/10.0.1": {
+      "Microsoft.AspNetCore.OpenApi/10.0.2": {
         "dependencies": {
           "Microsoft.OpenApi": "2.4.1"
         },
         "runtime": {
           "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {
-            "assemblyVersion": "10.0.1.0",
-            "fileVersion": "10.0.125.57005"
+            "assemblyVersion": "10.0.2.0",
+            "fileVersion": "10.0.225.61305"
           }
         }
       },
@@ -1053,12 +1053,12 @@
       "path": "microsoft.aspnetcore.authentication.jwtbearer/10.0.11",
       "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.10.0.11.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.OpenApi/10.0.1": {
+    "Microsoft.AspNetCore.OpenApi/10.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-gMY53EggRIFawhue66GanHcm1Tcd0+QzzMwnMl60LrEoJhGgzA9qAbLx6t/ON3hX4flc2NcEbTK1Z5GCLYHcwA==",
-      "path": "microsoft.aspnetcore.openapi/10.0.1",
-      "hashPath": "microsoft.aspnetcore.openapi.10.0.1.nupkg.sha512"
+      "sha512": "sha512-YuEjUNpsoZLs0I5ONt013Z+Udsz3f9sPUh1Xm59LN7+/Z8oVG/swCUYLBbANtfreiunWnoT2uk+5kst4s2jr3Q==",
+      "path": "microsoft.aspnetcore.openapi/10.0.2",
+      "hashPath": "microsoft.aspnetcore.openapi.10.0.2.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
       "type": "package",

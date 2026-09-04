@@ -1,41 +1,61 @@
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+var allowedOrigins = builder.Configuration
+    .GetSection("Cors:AllowedOrigins")
+    .Get<string[]>() ?? [];
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("GatewayCors", policy =>
+    {
+        policy.WithOrigins(allowedOrigins)
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
+builder.Services
+    .AddReverseProxy()
+    .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+app.UseCors("GatewayCors");
+
+// Đặt middleware trước các endpoint để request đi qua YARP cũng được ghi log.
+app.Use(async (context, next) =>
+{
+    Console.WriteLine($"[Gateway] → {context.Request.Method} {context.Request.Path}");
+    await next();
+});
+
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    // Gateway chỉ host Swagger UI. Các swagger.json được lấy từ service thông qua YARP.
+    app.UseSwaggerUI(options =>
+    {
+        options.RoutePrefix = "swagger";
+        options.DocumentTitle = "Marketplace Gateway - Swagger";
+
+        options.SwaggerEndpoint(
+            "/mc-product-order/swagger/v1/swagger.json",
+            "Product & Order Service v1");
+
+        options.SwaggerEndpoint(
+            "/mc-user/swagger/v1/swagger.json",
+            "User Service v1");
+
+        options.SwaggerEndpoint(
+            "/mc-payment/swagger/v1/swagger.json",
+            "Payment Service v1");
+
+        options.DisplayRequestDuration();
+        options.EnableDeepLinking();
+    });
+
+    app.MapGet("/", () => Results.Redirect("/swagger"));
 }
 
-app.UseHttpsRedirection();
-
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+app.MapReverseProxy();
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

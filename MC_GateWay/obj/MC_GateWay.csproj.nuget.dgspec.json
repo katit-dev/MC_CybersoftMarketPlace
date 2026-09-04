@@ -53,6 +53,14 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[10.0.2, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[10.1.7, )"
+            },
+            "Yarp.ReverseProxy": {
+              "target": "Package",
+              "version": "[2.3.0, )"
             }
           },
           "imports": [
