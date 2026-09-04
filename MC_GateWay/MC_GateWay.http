@@ -1,0 +1,6 @@
+@MC_GateWay_HostAddress = http://localhost:5252
+
+GET {{MC_GateWay_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
