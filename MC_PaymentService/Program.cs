@@ -62,8 +62,6 @@ builder.Services.AddSwaggerGen(options =>
         Version = "v1",
         Description = "API documentation for .NET 10"
     });
-    // Swagger UI chạy tại Gateway phải gọi API qua route prefix của YARP.
-    options.AddServer(new OpenApiServer { Url = "/mc-user" });
     // Khai báo scheme Bearer -> tạo nút "Authorize" + ô nhập token trong Swagger
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
