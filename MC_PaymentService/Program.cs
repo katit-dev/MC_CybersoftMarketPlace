@@ -62,6 +62,7 @@ builder.Services.AddSwaggerGen(options =>
         Version = "v1",
         Description = "API documentation for .NET 10"
     });
+    options.AddServer(new OpenApiServer { Url = "/mc-payment" });
     // Khai báo scheme Bearer -> tạo nút "Authorize" + ô nhập token trong Swagger
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
